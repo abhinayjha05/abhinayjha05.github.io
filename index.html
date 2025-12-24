@@ -13,6 +13,8 @@ body{
  background:#eef2f7;
  color:#333;
 }
+
+/* HEADER */
 header{
  background:linear-gradient(135deg,#6a11cb,#2575fc);
  color:white;
@@ -21,7 +23,14 @@ header{
 }
 header h1{margin:0;font-size:40px;}
 header p{font-size:18px;margin-top:10px;}
+header p.shloka{
+ font-style:italic;
+ font-size:17px;
+ margin-top:15px;
+ opacity:0.95;
+}
 
+/* PROFILE PIC */
 .profile{
  text-align:center;
  margin-top:-60px;
@@ -34,7 +43,8 @@ header p{font-size:18px;margin-top:10px;}
  box-shadow:0 5px 20px rgba(0,0,0,0.2);
  object-fit:cover;
 }
-<a href="man-ki-baat.md">मेरी पोस्ट पढ़ें</a>
+
+/* MAIN BODY */
 .container{
  max-width:950px;
  margin:auto;
@@ -52,10 +62,7 @@ h2{
  margin-top:0;
 }
 
-.skills li{margin-bottom:8px;}
-
-audio{width:100%;margin-top:10px;}
-
+/* SOCIAL */
 .social a{
  display:inline-block;
  margin:8px;
@@ -71,6 +78,18 @@ audio{width:100%;margin-top:10px;}
 .whatsapp{background:#25d366;}
 .facebook{background:#1877f2;}
 
+/* BUTTON */
+.btn{
+ display:inline-block;
+ padding:12px 20px;
+ border-radius:10px;
+ text-decoration:none;
+ background:#1e3c72;
+ color:white;
+ margin-top:10px;
+}
+
+/* FOOTER */
 footer{
  background:#1e3c72;
  color:white;
@@ -78,17 +97,25 @@ footer{
  padding:15px;
  font-size:14px;
 }
+
+/* MOBILE */
 @media(max-width:600px){
  header h1{font-size:30px;}
+ header p.shloka{font-size:15px;}
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
  <h1>Abhinay Jha</h1>
  <p>🥁 Tabla Player • Percussion Artist 🎶</p>
+
+ <!-- SHLOKA -->
+ <p class="shloka">
+  साहित्यसंगीतकलाविहीनः साक्षात्पशुः पुच्छविषाणहीनः ।
+ </p>
 </header>
 
 <!-- PROFILE PHOTO -->
@@ -106,29 +133,13 @@ footer{
  </p>
 
  <p>
- नमस्ते! मेरा नाम <b>अभिनय झा</b> है। मैं एक <b>तबला वादक</b> हूँ। 
- मुझे भारतीय शास्त्रीय संगीत, भजन, कीर्तन और अन्य संगीत कार्यक्रमों में तबला बजाना बहुत पसंद है।
- </p>
-</div>
-
-<div class="card">
- <h2>🧾 My Bio / मेरा जीवन परिचय</h2>
- <p>
- बचपन से ही मुझे ताल और लय में बहुत रुचि थी। धीरे-धीरे मैंने तबला सीखना शुरू किया 
- और आज भी नियमित रूप से रियाज़ करता हूँ। मुझे भजन, कीर्तन, भक्ति संगीत 
- और सुरीले गीतों के साथ तबला संगत करना बहुत अच्छा लगता है।
- </p>
-
- <p>
- मेरा उद्देश्य है कि अपने संगीत के माध्यम से लोगों के दिलों तक पहुँच सकूँ 
- और भारतीय संगीत की परंपरा को आगे बढ़ा सकूँ।
+ नमस्ते! मेरा नाम <b>अभिनय झा</b> है। मैं एक <b>तबला वादक</b> हूँ।
  </p>
 </div>
 
 <div class="card">
  <h2>⭐ My Skills / मेरी विशेषताएँ</h2>
-
- <ul class="skills">
+ <ul>
   <li>🥁 Tabla Playing (Classical & Light Music)</li>
   <li>🎵 Bhajan & Devotional Accompaniment</li>
   <li>🎶 Live Stage Performance</li>
@@ -139,8 +150,13 @@ footer{
 </div>
 
 <div class="card">
- <h2>📲 Connect With Me</h2>
+ <h2>📸 My Photo Gallery</h2>
+ <p>मेरी सभी तस्वीरें यहाँ देखें 👇</p>
+ <a class="btn" href="gallery.html">Open Gallery</a>
+</div>
 
+<div class="card">
+ <h2>📲 Connect With Me</h2>
  <div class="social">
   <a href="https://youtube.com/@abhinayjha05" target="_blank" class="youtube">YouTube</a>
   <a href="https://instagram.com/abhinayjha05" target="_blank" class="instagram">Instagram</a>
