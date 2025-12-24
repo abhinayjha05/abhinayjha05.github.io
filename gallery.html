@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery | Abhinay Jha</title>
+
+<style>
+body{
+ margin:0;
+ font-family:Arial;
+ background:#eef2f7;
+}
+
+/* Top Bar */
+header{
+ background:#1e3c72;
+ color:white;
+ text-align:center;
+ padding:20px;
+}
+a.back{
+ color:white;
+ text-decoration:none;
+ font-size:14px;
+}
+
+/* GALLERY */
+.container{
+ max-width:1000px;
+ margin:auto;
+ padding:20px;
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:12px;
+}
+.gallery figure{
+ margin:0;
+}
+.gallery img{
+ width:100%;
+ border-radius:12px;
+ cursor:pointer;
+ box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+.gallery figcaption{
+ text-align:center;
+ margin-top:6px;
+ font-size:14px;
+}
+
+/* LIGHTBOX */
+.lightbox{
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:rgba(0,0,0,.9);
+ display:none;
+ justify-content:center;
+ align-items:center;
+ z-index:10;
+}
+.lightbox img{
+ max-width:90%;
+ max-height:80%;
+ border-radius:12px;
+}
+.btns{
+ position:absolute;
+ top:20px;
+ right:20px;
+}
+button{
+ padding:8px 14px;
+ margin-left:6px;
+}
+.nav{
+ position:absolute;
+ top:50%;
+ font-size:35px;
+ color:white;
+ cursor:pointer;
+ user-select:none;
+}
+.prev{left:20px;}
+.next{right:20px;}
+</style>
+</head>
+
+<body>
+
+<header>
+ <a class="back" href="index.html">⬅ Back</a>
+ <h2>My Photo Gallery</h2>
+</header>
+
+<div class="container">
+
+<div class="gallery">
+
+ <!-- बस अपनी फोटो के नाम यहाँ डालते जाओ -->
+ <figure>
+  <img src="gallery/pic1.jpg" alt="">
+  <figcaption>Photo 1</figcaption>
+ </figure>
+
+ <figure>
+  <img src="gallery/pic2.jpg" alt="">
+  <figcaption>Photo 2</figcaption>
+ </figure>
+
+ <figure>
+  <img src="gallery/pic3.jpg" alt="">
+  <figcaption>Photo 3</figcaption>
+ </figure>
+
+ <figure>
+  <img src="gallery/pic4.jpg" alt="">
+  <figcaption>Photo 4</figcaption>
+ </figure>
+
+</div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+ <span class="nav prev" id="prev">&#10094;</span>
+ <img id="big">
+ <span class="nav next" id="next">&#10095;</span>
+
+ <div class="btns">
+  <a id="download" download>
+   <button>Download</button>
+  </a>
+  <button onclick="closeBox()">Close</button>
+ </div>
+</div>
+
+<script>
+let images=[...document.querySelectorAll('.gallery img')];
+let index=0;
+const box=document.getElementById('lightbox');
+const big=document.getElementById('big');
+const dl=document.getElementById('download');
+
+images.forEach((img,i)=>{
+ img.onclick=()=>{
+  index=i;
+  show();
+ }
+});
+
+function show(){
+ box.style.display='flex';
+ big.src=images[index].src;
+ dl.href=images[index].src;
+}
+
+function closeBox(){
+ box.style.display='none';
+}
+
+document.getElementById('prev').onclick=()=>{
+ index=(index-1+images.length)%images.length;
+ show();
+}
+document.getElementById('next').onclick=()=>{
+ index=(index+1)%images.length;
+ show();
+}
+</script>
+
+</body>
+</html>
